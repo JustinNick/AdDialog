@@ -36,10 +36,14 @@ configurations.all {
     }
     否则需要修改代码中的版本，使得APP中的版本和依赖库中的版本一致。
   4.之后再代码中可以直接使用AdManager。
+  
   API说明：
+  
 所有的设置参数均返回AdManager对象，所以可以直接链式调用。
+
 AdManager adManager = new AdManager(MainActivity.this, advList);
 aDMamager.
+
 /**
  * 设置弹窗背景全屏显示还是在内容区域显示
  */
@@ -92,8 +96,9 @@ aDMamager.
     在代码中初始化数据
 
 /**
-     * 初始化数据
+ * 初始化数据
      */
+     
     private void initData() {
         advList = new ArrayList<>();
         AdInfo adInfo = new AdInfo();
@@ -104,6 +109,7 @@ aDMamager.
         adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage2.png");
         advList.add(adInfo);
     }
+    
 这里只要是初始化图片的UI地址信息，方便我们的后续下载操作。
 
     执行弹窗的初始化与现实操作
@@ -111,12 +117,15 @@ aDMamager.
 /**
  * 创建广告活动管理对象
  */
+ 
 AdManager adManager = new AdManager(MainActivity.this, advList);
 adManager.setOverScreen(true)
          .setPageTransformer(new DepthPageTransformer());
+         
 /**
  * 执行弹窗的显示操作
  */
+ 
 adManager.showAdDialog(AdConstant.ANIM_DOWN_TO_UP);
 
 怎么样是不是很简单？下面我们可以来看一下具体API。
@@ -174,13 +183,15 @@ adManager.showAdDialog(AdConstant.ANIM_DOWN_TO_UP);
 /**
  * 执行弹窗的显示操作（参数的范围：0-360，0表示从右侧弹出，逆时针旋转）
  */
+ 
 adManager.showAdDialog(30);
 
     （2）自定义弹窗距离屏幕两侧的距离以及弹窗的宽高比：
 
 /**
-         * 自定义设置广告活动弹窗距离屏幕两侧距离以及宽高比
-         */
+ * 自定义设置广告活动弹窗距离屏幕两侧距离以及宽高比
+ */
+ 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,8 +212,9 @@ adManager.showAdDialog(30);
     （3）自定义背景颜色，自定义弹窗是否覆盖全屏，关闭按钮是否显示
 
 /**
-         * 自定义弹窗背景颜色,弹窗是否覆盖全屏,关闭按钮是否显示等
-         */
+ * 自定义弹窗背景颜色,弹窗是否覆盖全屏,关闭按钮是否显示等
+ */
+ 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -223,8 +235,9 @@ adManager.showAdDialog(30);
     （4）自定义设置弹性动画弹性参数和速度参数
 
 /**
-         * 自定义设定弹窗弹性参数和速度参数
-         */
+ * 自定义设定弹窗弹性参数和速度参数
+ */
+ 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -245,8 +258,9 @@ adManager.showAdDialog(30);
     （5）自定义设置弹窗ViewPager滑动动画：
 
 /**
-         * 自定义设置弹窗ViewPager滑动动画
-         */
+ * 自定义设置弹窗ViewPager滑动动画
+ */
+ 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -262,18 +276,20 @@ adManager.showAdDialog(30);
                 .showAdDialog(AdConstant.ANIM_UP_TO_DOWN);
             }
         });
+        
 这里我内置了三种ViewPager的滑动动画效果：
-
 DepthPageTransformer；
 RotateDownPageTransformer；
 ZoomOutPageTransformer；
+
 我们还可以自定义实现：PageTransformer自定义出自己的滑动动画效果，更多关于PageTransformer的知识，可参考鸿洋大神的： Android 实现个性的ViewPager切换动画 实战PageTransformer（兼容Android3.0以下）
 
     （6）自定义关闭按钮点击事件回调，ViewPagerItem点击事件回调
 
 /**
-         * 自定义设置弹窗ViewPagerItem点击事件，关闭按钮点击事件回调
-         */
+ * 自定义设置弹窗ViewPagerItem点击事件，关闭按钮点击事件回调
+ */
+ 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
