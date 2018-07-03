@@ -1,5 +1,6 @@
 # AdDialog
 APP首页广告弹窗
+
 1.需自定义MyApplication去继承AdApplication
 
 2.AndroidManifest中记得的添加访问网络的权限
