@@ -1,11 +1,13 @@
 # AdDialog
 APP首页广告弹窗
 
-1.需自定义MyApplication去继承AdApplication
+1.添加依赖库adlibrary  （implementation project(':adlibrary')）
 
-2.AndroidManifest中记得的添加访问网络的权限
+2.需自定义MyApplication去继承AdApplication
 
-3.build.gradle中添加
+3.AndroidManifest中记得的添加访问网络的权限
+
+4.build.gradle中添加
 
 configurations.all {
 
@@ -36,7 +38,7 @@ configurations.all {
         }
     }
     否则需要修改代码中的版本，使得APP中的版本和依赖库中的版本一致。
-  4.之后再代码中可以直接使用AdManager。
+  5.之后再代码中可以直接使用AdManager。
   
   API说明：
   
