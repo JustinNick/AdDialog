@@ -38,6 +38,7 @@ configurations.all {
         }
     }
     否则需要修改代码中的版本，使得APP中的版本和依赖库中的版本一致。
+    
   5.之后再代码中可以直接使用AdManager。
   
   API说明：
@@ -50,50 +51,73 @@ aDMamager.
 /**
  * 设置弹窗背景全屏显示还是在内容区域显示
  */
+ 
 .setOverScreen(true)
+
 /**
  * 设置ViewPager的滑动动画
  */
+ 
 .setPageTransformer(new DepthPageTransformer())
+
 /**
  * 设置弹窗距离屏幕两侧的距离（单位dp）
  */
+ 
 .setPadding(100)
+
 /**
  * 设置弹窗的宽高比
  */
+ 
 .setWidthPerHeight(0.75f)
+
 /**
  * 设置弹窗的背景色（当弹窗背景设置透明时，此设置失效）
  */
+ 
 .setBackViewColor(Color.parseColor("#AA333333"))
+
 /**
  * 设置弹窗背景是否透明
  */
+ 
 .setAnimBackViewTransparent(true)
+
 /**
  * 设置弹窗关闭图标是否可见
  */
+ 
 .setDialogCloseable(false)
+
 /**
  * 设置弹窗弹性滑动弹性值
  */
+ 
 .setBounciness(15)
+
 /**
  * 设置弹窗弹性滑动速度值
  */
+ 
 .setSpeed(5)
+
 /**
  * 设定弹窗点击事件回调
  */
+ 
 .setOnImageClickListener(new AdManager.OnImageClickListener() {})
+
 /**
  * 设定关闭按钮点击事件回调
  */
+ 
 .setOnCliseClickListener(new OnClickListener() {})
+
 /**
  * 开始执行弹窗的显示操作，可传值为0-360，0表示从右开始弹出，逆时针方向，也可以传入自定义的方向值
  */
+ 
 .showAdDialog(AdConstant.ANIM_UP_TO_DOWN)
 
     在代码中初始化数据
@@ -103,11 +127,11 @@ aDMamager.
      */
      
     private void initData() {
+    
         advList = new ArrayList<>();
         AdInfo adInfo = new AdInfo();
         adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage1.png");
         advList.add(adInfo);
-
         adInfo = new AdInfo();
         adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage2.png");
         advList.add(adInfo);
