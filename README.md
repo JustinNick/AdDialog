@@ -1,20 +1,35 @@
 # AdDialog
 APP首页广告弹窗
 1.需自定义MyApplication去继承AdApplication
+
 2.AndroidManifest中记得的添加访问网络的权限
+
 3.build.gradle中添加
+
 configurations.all {
+
         resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
+        
         //循环一个个的依赖库
+        
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        
             //获取当前循环到的依赖库
+            
             def requested = details.requested
+            
             //如果这个依赖库群组的名字是com.android.support
+            
             if (requested.group == 'com.android.support') {
+            
                 //且其名字不是以multidex开头的
+                
                 if (!requested.name.startsWith("multidex")) {
+                
                     //这里指定需要统一的依赖版本
+                    
                     details.useVersion '27.1.0'
+                    
                 }
             }
         }
@@ -113,38 +128,47 @@ adManager.showAdDialog(AdConstant.ANIM_DOWN_TO_UP);
 在执行AdManager的showAdDialog方法时，需要传递一个int型的animType参数，我们默认定义了八个该类型的参数，默认如下：
 
 // ####################### 弹出动画效果 ###########################
+
     /**
      * 广告活动弹窗动画-从上至下
      */
     public static final int ANIM_UP_TO_DOWN = -11;
+    
     /**
      * 广告活动弹窗动画-从下至上
      */
     public static final int ANIM_DOWN_TO_UP = -12;
+    
     /**
      * 广告活动弹窗动画-从左至右
      */
     public static final int ANIM_LEFT_TO_RIGHT = -13;
+    
     /**
      * 广告活动弹窗动画-从右至左
      */
     public static final int ANIM_RIGHT_TO_LEFT = -14;
+    
     /**
      * 广告活动弹窗动画-从左上弹出
      */
     public static final int ANIM_UPLEFT_TO_CENTER = -15;
+    
     /**
      * 广告活动弹窗动画-从右上弹出
      */
     public static final int ANIM_UPRIGHT_TO_CENTER = -16;
+    
     /**
      * 广告活动弹窗动画-从左下弹出
      */
     public static final int ANIM_DOWNLEFT_TO_CENTER = -17;
+    
     /**
      * 广告活动弹窗动画-从右下弹出
      */
     public static final int ANIM_DOWNRIGHT_TO_CENTER = -18;
+    
 好吧，如果你觉得还不够好，我想让弹窗从右上侧30度角的弹出可以么？这也是支持的，只需要你传递的int型的animType的时候传递30就好了，如下：
 
 /**
