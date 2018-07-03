@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AdLibrary</string>
+
+    <string name="ad_library_errorButton">重新加载</string>
+    <string name="ad_library_errorContentPlaceholder">网络不给力哦，加载失败</string>
+
+</resources>
